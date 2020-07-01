@@ -65,10 +65,10 @@ extension Visualizer {
     // MARK: - Start and Stop functions
     
     public class func start(_ config: Configuration = Configuration()) {
-		
-		if config.showsLog {
-			print("Visualizer start...")
-		}
+        
+        if config.showsLog {
+            print("Visualizer start...")
+        }
         let instance = sharedInstance
         instance.enabled = true
         instance.config = config
@@ -80,9 +80,9 @@ extension Visualizer {
                 }
             }
         }
-		if config.showsLog {
-			print("started !")
-		}
+        if config.showsLog {
+            print("started !")
+        }
     }
     
     public class func stop() {
@@ -179,7 +179,7 @@ extension Visualizer {
                 }
                 
                 log(touch)
-            case .regionEntered, .regionMoved, .regionExited:
+            default:
                 log(touch)
             }
         }
@@ -214,7 +214,7 @@ extension Visualizer {
             case .stationary: phase = "S"
             case .ended: phase = "E"
             case .cancelled: phase = "C"
-            case .regionEntered, .regionMoved, .regionExited:
+            default:
                 phase = ""
             }
             
